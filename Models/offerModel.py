@@ -1,3 +1,4 @@
+
 from sqlalchemy import Column, Integer, DateTime, ForeignKey,VARCHAR,DECIMAL
 from Models.init import Base
 

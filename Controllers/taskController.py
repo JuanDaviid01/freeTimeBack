@@ -6,8 +6,8 @@ def list_task():
     cursor = connection.cursor()
 
     query = """
-        SELECT task_title, task_stimed_time_hours, task_offer_suggested
-        FROM Task
+        SELECT task_id, task_title, task_stimed_time_hours, task_offer_suggested FROM task;
+
     """
 
     try:
@@ -20,9 +20,10 @@ def list_task():
         task_list = []
         for task in tasks:
             task_list.append({
-                'task_title': task[0],
-                'task_stimed_time_hours': task[1],
-                'task_offer_suggested': task[2]
+                'task_id': task[0],                     # Incluye el task_id como el primer campo
+                'task_title': task[1],                  # Ajusta los índices según el orden en la query
+                'task_stimed_time_hours': task[2],
+                'task_offer_suggested': task[3]
             })
 
         return task_list

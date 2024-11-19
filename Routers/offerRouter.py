@@ -1,3 +1,4 @@
+
 from flask import Blueprint, request, jsonify
 from Controllers.offerController import add_offer, list_offers
 
@@ -48,7 +49,6 @@ def add_offer_route():
         return jsonify({"message": "Oferta agregada exitosamente"}), 201
     else:
         return jsonify({"error": "Error al agregar la oferta"}), 500
-
 # Ruta para listar todas las ofertas
 @offer_router.route('/listOffers', methods=['GET'])
 def list_offers_route():
